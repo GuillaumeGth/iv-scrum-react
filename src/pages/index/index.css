@@ -1,0 +1,314 @@
+
+#player{
+    display: none;
+}
+.music{
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+}
+.hidden{
+    opacity: 0;
+}
+.dotted{
+    font-family: 'LED Dot-Matrix';
+    font-size: 2em;
+    color: #fbceff;
+    margin: auto;
+}
+li[data-user-id] img{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.team{
+    padding: 0 50px !important;
+}
+.button {
+    cursor: pointer;
+    padding: 0 8px;
+}
+input{
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #411767;
+}
+.player-actions {
+    
+    align-self: flex-end;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#cards {
+    display: flex;    
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.card{    
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, .3);
+    color: #353535;
+    border-radius: 5px;
+    margin: 20px;    
+    min-height: 190px;
+    width: 190px;
+    flex-direction: column;    
+}
+.card .link {
+    padding: 20px 5px;
+    text-decoration: none;
+    color: white;
+}
+.card .status {
+    color: #dadada;
+    background: rgba(255, 255, 255, .2);
+    height: 30px;
+    line-height: 30px;
+    font-weight: bolder;    
+    font-size: .8em;;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.row > div{
+    padding: 3px;
+}
+#picker {
+    margin: 20px;
+    height: fit-content;
+}
+.delorean {        
+    padding-right: 5px;
+}
+#settings {
+    display: flex;
+    
+    align-items: center;
+}
+
+#actions { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#infoArea {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+}
+
+#currentDevInfo {
+    padding: .5em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#currentDevInfo>span {
+    padding: 0 1em;
+}
+
+#txtDevDone {
+    color: #888;
+}
+
+#txtDevDone>.dev-trigram {
+    text-decoration: line-through;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-warning {
+    box-shadow: 0 0 0 1px #ffecb5 inset, 0 0 0 0 transparent;
+    background-color: #fff3cd;
+    color: #664d03;
+    margin: 0.4em auto;
+    padding: 0.6em;
+}
+
+.message-success {
+    box-shadow: 0 0 0 1px #d1e7dd inset, 0 0 0 0 transparent;
+    background-color: #badbcc;
+    color: #0f5132;
+    margin: 0.4em auto;
+    padding: 0.6em;
+}
+
+.message-error {
+    box-shadow: 0 0 0 1px #f5c2c7 inset, 0 0 0 0 transparent;
+    background-color: #f8d7da;
+    color: #842029;
+    margin: 0.4em auto;
+    padding: 0.6em;
+}
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #e60073, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 10px #ff4da6, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6;
+    }
+  }
+  .tabs{
+      margin: 0;
+      margin-top: 20px;
+      display: flex;
+      list-style-type: none;
+      padding: 0; 
+  }
+  .tab{
+    white-space: nowrap;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .tab.selected {
+      background-color: #282828;
+    border-bottom: 1px solid #282828;    
+    border-radius: 5px;
+    border-bottom-right-radius: 0;    
+    border-bottom-left-radius: 0;    
+    background:rgba(255, 255, 255, .3);    
+    border-bottom: none;
+    pointer-events: none;
+}
+  .dev.column{
+      min-width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 5px;
+    border-top: none;    
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .dev.column li .label{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .dev.column li label{
+      padding: 0 5px;
+      cursor: pointer;
+      min-width: 85px;
+      text-align: initial;
+  }
+  .dev.column li{
+    position: relative;
+    transition: ease .5s;
+    padding: 5px 10px;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dev.column li:hover,
+  .dev.column li.selected {
+    background: rgba(0, 0, 0, .3);
+    }
+  .dev.column li:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #484141;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    }
+ 
+.tab .link {
+    display: none;
+}
+.selected .link{
+    display: initial !important;
+}
+.ribbon{
+    -webkit-text-size-adjust: 100%;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-direction: normal;
+    box-sizing: inherit;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+    background-image: none;
+    padding: .5833em .833em;
+    text-transform: none;
+    font-weight: 700;
+    border: 0 solid transparent;
+    transition: background .1s ease;
+    font-size: .85714286rem;    
+    position: relative;
+    margin: 0;
+    min-width: max-content;
+    border-radius: 0 .28571429rem .28571429rem 0;
+    left: calc(0em - 1.2em);
+    margin-right: -1.2em;
+    padding-left: calc(1rem + 1.2em);
+    padding-right: 1.2em;
+    background-color: #9155a3!important;
+    color: #fff!important;
+    border-color: #57316b!important;
+    margin-top: 1em;
+    width: 1px;
+}
+.ribbon::after{
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    background-color: transparent!important;
+    border-style: solid;
+    border-width: 0 1.2em 1.2em 0;
+    border-color: transparent;
+    border-right-color: inherit;
+    width: 0;
+    height: 0;
+}
+[data-color='yellow']{
+    color: yellow;
+}
+[data-color='orange']{
+    color: orange;
+}
+[data-color='red']{
+    color: rgb(231 0 0);
+}
+[data-color='green']{
+    color: #30c830;
+}
+[data-color='purple']{
+    color: rgb(171, 33, 171);
+}
+[data-color='pink']{
+    color: rgb(255, 32, 244);
+}
+[data-color='blue']{
+    color: rgb(28 187 255);
+}
+[data-color='white']{
+    color: white;
+}
+#cauchyStatusImg {
+    width: 100px;
+    height: 100px;
+}
