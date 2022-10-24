@@ -7,7 +7,7 @@ type ApiOptions = {
 }
 type ApiMethod = 'GET' | 'POST';
 class Api {    
-    public static apiUrl = process.env.API_URL ||  'https://localhost:5001';    
+    public static apiUrl = process.env.API_URL ||  'https://iv-scrum-api.herokuapp.com';    
     //public static apiUrl = 'http://10.0.2.2:5000';
    // public static apiUrl = 'https://localhost:5001'
     public static call = async (route: string, options: ApiOptions) => {
