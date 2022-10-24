@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/iv-scrum-react/static/css/main.acebe8be.css",
+    "main.js": "/iv-scrum-react/static/js/main.dd1c5df6.js",
+    "static/js/787.471ed6fc.chunk.js": "/iv-scrum-react/static/js/787.471ed6fc.chunk.js",
+    "static/media/wallpaper1.jpg": "/iv-scrum-react/static/media/wallpaper1.b3d000d6bc2bac5417b8.jpg",
+    "static/media/Typewriter-Black.ttf": "/iv-scrum-react/static/media/Typewriter-Black.833ea44b830f2d1fbb2e.ttf",
+    "static/media/Xantegrode_Signature.ttf": "/iv-scrum-react/static/media/Xantegrode_Signature.773dff96962ce9368230.ttf",
+    "static/media/Magic_Retro.ttf": "/iv-scrum-react/static/media/Magic_Retro.83fd0b5584c39c084273.ttf",
+    "static/media/Ancient Medium.ttf": "/iv-scrum-react/static/media/Ancient Medium.a59ed847ec519bfb87a7.ttf",
+    "static/media/ROMANTICE.ttf": "/iv-scrum-react/static/media/ROMANTICE.bcade2def3ceb3b72331.ttf",
+    "index.html": "/iv-scrum-react/index.html",
+    "main.acebe8be.css.map": "/iv-scrum-react/static/css/main.acebe8be.css.map",
+    "main.dd1c5df6.js.map": "/iv-scrum-react/static/js/main.dd1c5df6.js.map",
+    "787.471ed6fc.chunk.js.map": "/iv-scrum-react/static/js/787.471ed6fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acebe8be.css",
+    "static/js/main.dd1c5df6.js"
+  ]
+}
