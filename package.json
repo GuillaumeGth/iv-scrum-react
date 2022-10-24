@@ -2,9 +2,7 @@
   "name": "iv-scrum-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://guillaumegth.github.io",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
+  "homepage": "https://guillaumegth.github.io/iv-scrum-react/", 
   "dependencies": {
     "@leenguyen/react-flip-clock-countdown": "^1.3.1",
     "@reduxjs/toolkit": "^1.8.5",
@@ -32,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
