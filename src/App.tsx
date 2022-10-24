@@ -13,7 +13,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">     
-          <div className="flex">               
+          <div className="flex">   
+            <span>test</span>            
             <Router>
                 <Routes>
                   <Route path="/" element={ <Dashboard />} />                                                                                               
