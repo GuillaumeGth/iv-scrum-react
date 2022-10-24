@@ -1,4 +1,4 @@
-import Index from './pages/index/index';
+
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/reducer';
@@ -7,17 +7,21 @@ import {
   Route,
   BrowserRouter as Router
 } from "react-router-dom";
+import Teams from './pages/Teams';
+import Index from './pages/index/Index';
+import Dashboard from './pages/Dashboard';
+
 function App() {
   return (
     <Provider store={store}>
       <div className="App">     
           <div className="flex">               
             <Router>
-              <Routes>
-                <Route path="/" element={ <Index />} />                         
-              </Routes>
-              <Routes>                                  
-              </Routes>
+                <Routes>
+                  <Route path="/" element={ <Index />} />                                         
+                  <Route path="/teams" element={ <Teams />} />    
+                  <Route path="/dashboard" element={ <Dashboard />} />                         
+                </Routes>              
             </Router>
           </div>
       </div>

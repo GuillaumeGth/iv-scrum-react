@@ -1,0 +1,19 @@
+.kpi{
+    padding: 15px;
+    margin: 10px;
+    background: rgba(188, 188, 188, 0.3);
+    border-radius: 20px;
+    border: 1px solid rgb(207, 207, 207);
+}
+.name, .diff{
+    font-weight: 900;
+}
+.diff{
+    margin-left: 4px;
+}
+.negative{
+    color: rgb(7, 213, 7);
+}
+.positive {
+    color: rgb(255, 35, 35);
+}

@@ -2,19 +2,22 @@ import React, {FunctionComponent, useEffect, useState} from "react";
 import Team from "../../types/Team";
 import Api from "../../utils/Api";
 import Devs from "../Devs";
-import { useDispatch } from "react-redux";
-import { setDevs } from "../../redux/action";
-
-const Teams : FunctionComponent = () => {
-    const [teams, setTeams] = useState<Array<Team> | null>(null);
+import { useDispatch, useSelector } from "react-redux";
+import { setDevs, setTeams } from "../../redux/action";
+import { RootState } from "../../redux/reducer";
+type Props = {
+    onChange: Function;
+}
+const Teams : React.FC<Props> = ({onChange}) => {
+    const teams = (useSelector((state: RootState) => state.teams) as Record<string, any>).teams as Array<Team>;
     const dispatch = useDispatch();
     const getTeamsCallback = (data: any) => {
-        data[0].selected = true;        
-        setTeams(data);
+        data[0].selected = true;                
+        dispatch(setTeams(data));
     }
     useEffect(() => {
         if (!teams){
-            Api.call('/team', {method: 'GET', callback: getTeamsCallback})
+            Api.call('/team', { method: 'GET', callback: getTeamsCallback})
         }            
      });     
     const onClickHandler = (e: React.MouseEvent) => {
@@ -22,10 +25,17 @@ const Teams : FunctionComponent = () => {
         const target = e.target as HTMLElement;
         const tab = target.closest('.tab');
         const teamId = tab?.getAttribute('data-team-id');  
-        const newTeams = [...teams];    
-        newTeams?.forEach(t => t.selected = t.id === teamId);
-        dispatch(setDevs(null));
-        setTeams(newTeams);
+        const newTeams = teams.reduce((prev: [], cur: any) => {
+            const t = {...cur};
+            t.selected = t.id === teamId;
+            prev.push({...t} as never);
+            return prev;
+        }, [])        
+        dispatch(setTeams(newTeams));
+        dispatch(setDevs(null));      
+        if (onChange){
+            onChange();
+        }
     }
   return ( 
     <div className="flex column team">

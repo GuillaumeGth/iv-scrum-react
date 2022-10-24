@@ -2,14 +2,7 @@
 #player{
     display: none;
 }
-.music{
-    position: absolute;
-    width: 100%;
-    bottom: 5px;
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-}
+
 .hidden{
     opacity: 0;
 }

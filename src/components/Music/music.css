@@ -1,0 +1,12 @@
+.music{
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+}
+.player-actions{
+    align-items: center;
+}

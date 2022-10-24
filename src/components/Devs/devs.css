@@ -1,3 +1,6 @@
 .dev.hidden{
     display: none;
 }
+.dev {
+    min-height: 200px;
+}
