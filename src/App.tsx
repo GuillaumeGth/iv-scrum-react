@@ -7,8 +7,6 @@ import {
   Route,
   BrowserRouter as Router
 } from "react-router-dom";
-import Teams from './pages/Teams';
-import Index from './pages/index/Index';
 import Dashboard from './pages/Dashboard';
 
 function App() {
@@ -18,9 +16,7 @@ function App() {
           <div className="flex">               
             <Router>
                 <Routes>
-                  <Route path="/" element={ <Index />} />                                         
-                  <Route path="/teams" element={ <Teams />} />    
-                  <Route path="/dashboard" element={ <Dashboard />} />                         
+                  <Route path="/" element={ <Dashboard />} />                                                                                               
                 </Routes>              
             </Router>
           </div>
