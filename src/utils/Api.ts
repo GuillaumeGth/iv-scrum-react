@@ -4,6 +4,7 @@ type ApiOptions = {
     params?: Record<string, any>;
     host?: string;
     cors?: boolean;
+    callbackParam?: any;
 }
 type ApiMethod = 'GET' | 'POST';
 class Api {    
@@ -43,14 +44,11 @@ class Api {
                 (res as Response)?.json()
                 .then(data => {                
                     if (options.callback){
-                        options.callback(data);
+                        options.callback(data, options.callbackParam);
                     }
                 })
                 .catch((e) => {
-                    console.error(e);
-                    if (options.callback){
-                        options.callback();
-                    }                    
+                    console.error(e);                           
                 });
             }
             catch(e){
