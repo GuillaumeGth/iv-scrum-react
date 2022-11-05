@@ -50,3 +50,9 @@
 .percentage{
     font-weight: bold;
 }
+.title span {
+    margin-right: 6px;
+}
+.sprint-progress{
+    align-items: center;
+}

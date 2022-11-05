@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from "react";
+import { faChartLine } from '@fortawesome/free-solid-svg-icons'
 import Backlog from "../../types/Backlog";
 import Team from "../../types/Team";
 import './style.css';
@@ -15,6 +16,7 @@ import {
   } from 'chart.js';
 import Api from "../../utils/Api";
 import CircleProgressBar from "../CircleProgressBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -23,7 +25,7 @@ import CircleProgressBar from "../CircleProgressBar";
     Title,
     Tooltip,
     Legend
-  );
+  );  
 type Props = {
     team: Team    
 }
@@ -246,7 +248,11 @@ const TeamBoard : React.FC<Props> = ({team}) => {
                     />                                    
             </div>                            
         </div>
-        <div className="flex column">                                    
+        <div className="flex column">   
+            <div className="title">
+                <span>Movements</span>                                 
+                <FontAwesomeIcon icon={faChartLine} />
+            </div>            
             <div>                                                         
                 <span>Week</span>
                 {getRequestDiff(team.backlogs as Array<any>, 7)}
@@ -256,7 +262,7 @@ const TeamBoard : React.FC<Props> = ({team}) => {
                 {getRequestDiff(team.backlogs as Array<any>, 30)}
             </div>                            
         </div>   
-        <div className="flex column center">
+        <div className="flex column sprint-progress">
             <span>Sprint Progress</span>
             <CircleProgressBar value={percentageDone} />
         </div>
