@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/iv-scrum-react/static/css/main.e02a7369.css",
-    "main.js": "/iv-scrum-react/static/js/main.aceae133.js",
+    "main.css": "/iv-scrum-react/static/css/main.937b11d6.css",
+    "main.js": "/iv-scrum-react/static/js/main.08116c74.js",
     "static/js/787.471ed6fc.chunk.js": "/iv-scrum-react/static/js/787.471ed6fc.chunk.js",
     "static/media/wallpaper1.jpg": "/iv-scrum-react/static/media/wallpaper1.b3d000d6bc2bac5417b8.jpg",
     "static/media/Typewriter-Black.ttf": "/iv-scrum-react/static/media/Typewriter-Black.833ea44b830f2d1fbb2e.ttf",
@@ -10,12 +10,12 @@
     "static/media/Ancient Medium.ttf": "/iv-scrum-react/static/media/Ancient Medium.a59ed847ec519bfb87a7.ttf",
     "static/media/ROMANTICE.ttf": "/iv-scrum-react/static/media/ROMANTICE.bcade2def3ceb3b72331.ttf",
     "index.html": "/iv-scrum-react/index.html",
-    "main.e02a7369.css.map": "/iv-scrum-react/static/css/main.e02a7369.css.map",
-    "main.aceae133.js.map": "/iv-scrum-react/static/js/main.aceae133.js.map",
+    "main.937b11d6.css.map": "/iv-scrum-react/static/css/main.937b11d6.css.map",
+    "main.08116c74.js.map": "/iv-scrum-react/static/js/main.08116c74.js.map",
     "787.471ed6fc.chunk.js.map": "/iv-scrum-react/static/js/787.471ed6fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e02a7369.css",
-    "static/js/main.aceae133.js"
+    "static/css/main.937b11d6.css",
+    "static/js/main.08116c74.js"
   ]
 }
