@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import Backlog from "../../types/Backlog";
 import Team from "../../types/Team";
+import './style.css';
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -28,6 +29,7 @@ type Props = {
 }
 const TeamBoard : React.FC<Props> = ({team}) => {
     const [trelloCards, setTrelloCards] = useState<Array<any>>([]);
+    const [tags, setTags] = useState<Record<string, any>>({});
     const [fetching, setFetching] = useState<boolean>(false);
     const [fetchingLists, setFetchingLists] = useState<boolean>(false);    
     const [lists, setLists] = useState<Array<any> | null>(null);
@@ -143,14 +145,41 @@ const TeamBoard : React.FC<Props> = ({team}) => {
             callback: (data: Array<any>, cards: any) => {       
                 const idDone = data.find(list => list.name.indexOf('Done') > -1).id;
                 const doneCards: Array<any> = [];
+                const tags: Record<string, any> = {}
                 const names = cards.reduce((prev: Array<any>, current: any) => {
                     if (current.name[0] === '(')
                         prev.push(current.name);
                     if(current.idList === idDone)
                         doneCards.push(current);
+                    if (current.labels.length){
+                        if (!tags[current.labels[0].id]){                    
+                            tags[current.labels[0].id] = {                            
+                                name: current.labels[0].name,
+                                color: current.labels[0].color,
+                                cards: []
+                            }                     
+                        }
+                        tags[current.labels[0].id].cards.push(current);
+                    }                          
                     return prev;
-                }, []);     
+                }, []);  
                 const regExp = /\(([^)]+)\)/;
+                for (const id in tags){
+                    const tag = tags[id];
+                    let total = 0;
+                    let totalDone = 0;
+                    tag.cards.forEach((card: any) => {
+                        const matches = regExp.exec(card.name);
+                        if (!matches) return;                    
+                        total += (parseInt(matches[1]));   
+                        if(card.idList === idDone){
+                            totalDone += (parseInt(matches[1]));
+                        }
+                        tag.total = total;
+                        tag.totalDone = totalDone;                
+                    })
+                };
+                setTags(tags);
                 let total = 0;
                 names.forEach((name: string) => {
                     const matches = regExp.exec(name);
@@ -158,8 +187,8 @@ const TeamBoard : React.FC<Props> = ({team}) => {
                     total += (parseInt(matches[1]));               
                 });    
                 let totalDone = 0;
-                doneCards.forEach((name: string) => {
-                    const matches = regExp.exec(name);
+                doneCards.forEach((card: Record<string, any>) => {
+                    const matches = regExp.exec(card.name);
                     if (!matches) return;                    
                     totalDone += (parseInt(matches[1]));               
                 });
@@ -186,6 +215,7 @@ const TeamBoard : React.FC<Props> = ({team}) => {
         })                    
         return trelloCards;
     }
+    console.log(tags)
     return ( 
     <div className="kpi flex row" key={team.id}>
         <div className="flex column">            
@@ -229,6 +259,15 @@ const TeamBoard : React.FC<Props> = ({team}) => {
         <div className="flex column center">
             <span>Sprint Progress</span>
             <CircleProgressBar value={percentageDone} />
+        </div>
+        <div className="flex column">            
+            {Object.entries(tags).map((id: any) => {
+                const tag = tags[id[0]];
+                return (<div key={id[0]} className={`tag ${tag.color}`}>
+                    <span className="label">{tag.name}</span>
+                    <span className="percentage">{(tag.totalDone / tag.total) * 100 }%</span>
+                </div>)
+            })}
         </div>
     </div>
   );

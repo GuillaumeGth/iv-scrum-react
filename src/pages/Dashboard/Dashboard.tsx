@@ -25,11 +25,11 @@ const Dashboard : FunctionComponent = () => {
         }
     });       
 return ( 
-        <div id="flex column">            
+        <div className="flex column">            
             {backlogData && backlogData.map((data: Team) => {
                 return (
                     <TeamBoard team={data}/>
-            )})}
+            )})}            
         </div>  
     );
 }

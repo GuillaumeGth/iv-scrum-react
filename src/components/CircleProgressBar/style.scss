@@ -127,17 +127,17 @@ $label-font-size-redo: $default-size * 4;
   &.style-2 {
     .label {
       background: none;
-      color: #7f8c8d;
+      color: #e5f7f8;
 
       .smaller {
-        color: #bdc3c7;
+        color: #ccd1d5;
       }
     }
   }
 
   @for $i from 1 through 100 {
     &.progress-#{$i} {
-        $bar-color: #000000;
+        $bar-color: #2f5195;
         @if $i > 10 {
             $bar-color: #d22525;
         }
@@ -145,7 +145,7 @@ $label-font-size-redo: $default-size * 4;
             $bar-color: #f09c1e;
         }
         @if $i > 30 {
-            $bar-color: #fcf23a;
+            $bar-color: #ded637;
         }
         @if $i > 40 {
             $bar-color: #e83887;

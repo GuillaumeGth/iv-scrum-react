@@ -1,0 +1,52 @@
+.diff{    
+    margin-left: 4px;
+}
+.name{
+    font-size: 1.3em;
+}
+.tag {    
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 0 5px 2px;
+    font-size: .9em;
+    inline-size: fit-content;
+}
+.tag.pink {
+    background: rgba(255, 180, 180, 0.7);
+    border: 1px solid rgb(237, 148, 163);
+}
+.tag.yellow {
+    background: rgba(255, 248, 148, 0.7);
+    border: 1px solid yellow;
+}
+.tag.orange {
+    background: rgba(255, 192, 154, 0.7);
+    border: 1px solid orange;
+}
+.tag.red {
+    background: rgba(255, 158, 158, 0.7);
+    border: 1px solid rgb(206, 43, 43);
+}
+.tag.blue {
+    background: rgba(158, 226, 255, 0.7);
+    border: 1px solid blue;
+}
+.tag.green{
+    background: rgba(178, 255, 169, 0.7);
+    border: 1px solid green;
+}
+.tag.purple_dark{
+    background: rgba(220, 160, 255, 0.7);
+    border: 1px solid purple;
+}
+.tag.black_dark{
+    background: rgba(104, 104, 104, 0.7);   
+    border: 1px solid rgb(55, 55, 55); 
+}
+.tag .label{
+    margin-right: 10px;
+}
+.percentage{
+    font-weight: bold;
+}

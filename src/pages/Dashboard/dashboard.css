@@ -8,12 +8,6 @@
 .kpi>.column{
     margin-left: 15px;
 }
-.name, .diff{
-    font-weight: 900;
-}
-.diff{
-    margin-left: 4px;
-}
 .negative{
     color: rgb(7, 213, 7);
 }
