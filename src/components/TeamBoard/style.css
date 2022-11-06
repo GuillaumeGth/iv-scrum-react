@@ -1,8 +1,28 @@
 .diff{    
     margin-left: 4px;
 }
+.kpi{
+    padding: 12px;
+    margin: 3px;
+    background: rgba(188, 188, 188, 0.3);
+    border-radius: 10px;
+    border: 1px solid rgb(207, 207, 207);
+}
+.kpi>.column{
+    margin-left: 15px;
+}
+.negative{
+    color: rgb(7, 213, 7);
+}
+.positive {
+    color: rgb(255, 35, 35);
+}
 .name{
     font-size: 1.3em;
+}
+legend h3{
+    margin: 0;
+    padding: 0 3px;    
 }
 .tag {    
     color: white;
@@ -42,7 +62,7 @@
 }
 .tag.black_dark{
     background: rgba(104, 104, 104, 0.7);   
-    border: 1px solid rgb(55, 55, 55); 
+    border: 1px solid rgb(42, 42, 42); 
 }
 .tag .label{
     margin-right: 10px;

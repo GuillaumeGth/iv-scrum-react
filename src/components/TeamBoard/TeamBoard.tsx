@@ -216,14 +216,13 @@ const TeamBoard : React.FC<Props> = ({team}) => {
             }
         })                    
         return trelloCards;
-    }
-    console.log(tags)
+    }    
     return ( 
-    <div className="kpi flex row" key={team.id}>
-        <div className="flex column">            
-            <span className="name">{team.name}</span>
-            <div>                         
-                <Line
+    <fieldset className="kpi flex row" key={team.id}>
+        <legend><h3>{team.name}</h3></legend>
+        <div className="flex column">    
+            <span>Backlog</span>         
+            <Line
                 options={{
                     responsive: true,
                     scales: {                                        
@@ -245,8 +244,7 @@ const TeamBoard : React.FC<Props> = ({team}) => {
 
                     },}}                                                       
                 data={getBackLogDataSet(team)}
-                    />                                    
-            </div>                            
+                    />  
         </div>
         <div className="flex column">   
             <div className="title">
@@ -275,7 +273,7 @@ const TeamBoard : React.FC<Props> = ({team}) => {
                 </div>)
             })}
         </div>
-    </div>
+    </fieldset>
   );
 }
 export default TeamBoard;
